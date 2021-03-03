@@ -1,7 +1,7 @@
 {
   "name": "pdf-viewer",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "main": "./dist/pdf-viewer.common.js",
   "scripts": {
     "serve": "vue-cli-service serve",
