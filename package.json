@@ -2,11 +2,18 @@
   "name": "pdf-viewer",
   "version": "0.1.0",
   "private": true,
+  "main": "./dist/pdf-viewer.common.js",
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build"
+    "build": "vue-cli-service build",
+    "build-lib": "vue-cli-service build --target lib --name pdf-viewer src/main.js"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.34",
+    "@fortawesome/free-brands-svg-icons": "^5.15.2",
+    "@fortawesome/free-solid-svg-icons": "^5.15.2",
+    "@fortawesome/vue-fontawesome": "^2.0.2",
+    "pdfvuer": "^1.7.5",
     "core-js": "^3.6.5",
     "vue": "^2.6.11"
   },

@@ -1,22 +1,35 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div class="example-container">
+      <pdf-viewer
+        src="test.pdf"
+        shareLink="test"
+        @share-button-click="shareButtonClick"
+      ></pdf-viewer>
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import PdfViewer from "@/components/PdfViewer.vue";
 
 export default {
-  name: 'App',
+  methods: {
+    shareButtonClick(e) {
+      console.log(e);
+    },
+  },
   components: {
-    HelloWorld
-  }
-}
+    PdfViewer,
+  },
+};
 </script>
 
-<style lang="scss">
+<style scoped>
+.example-container {
+  width: 600px;
+  height: 400px;
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
