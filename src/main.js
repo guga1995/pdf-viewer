@@ -19,4 +19,7 @@ library.add(
 )
 
 import PdfViewer from '@/components/PdfViewer.vue'
-export default {PdfViewer}
+
+export { 
+  PdfViewer
+}
