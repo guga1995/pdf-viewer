@@ -91,7 +91,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "fae3");
+/******/ 	return __webpack_require__(__webpack_require__.s = "fb15");
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -72263,6 +72263,13 @@ module.exports = function (name) {
 
 /***/ }),
 
+/***/ "bd8c":
+/***/ (function(module, exports, __webpack_require__) {
+
+!function(t,e){ true?module.exports=e():undefined}("undefined"!=typeof self?self:this,(function(){return function(t){var e={};function i(r){if(e[r])return e[r].exports;var o=e[r]={i:r,l:!1,exports:{}};return t[r].call(o.exports,o,o.exports,i),o.l=!0,o.exports}return i.m=t,i.c=e,i.d=function(t,e,r){i.o(t,e)||Object.defineProperty(t,e,{enumerable:!0,get:r})},i.r=function(t){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(t,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(t,"__esModule",{value:!0})},i.t=function(t,e){if(1&e&&(t=i(t)),8&e)return t;if(4&e&&"object"==typeof t&&t&&t.__esModule)return t;var r=Object.create(null);if(i.r(r),Object.defineProperty(r,"default",{enumerable:!0,value:t}),2&e&&"string"!=typeof t)for(var o in t)i.d(r,o,function(e){return t[e]}.bind(null,o));return r},i.n=function(t){var e=t&&t.__esModule?function(){return t.default}:function(){return t};return i.d(e,"a",e),e},i.o=function(t,e){return Object.prototype.hasOwnProperty.call(t,e)},i.p="",i(i.s=0)}([function(t,e,i){t.exports=i(1)},function(t,e,i){"use strict";i.r(e),i.d(e,"ShareNetwork",(function(){return n}));var r={baidu:"http://cang.baidu.com/do/add?iu=@u&it=@t",buffer:"https://bufferapp.com/add?text=@t&url=@u",email:"mailto:?subject=@t&body=@u%0D%0A@d",evernote:"https://www.evernote.com/clip.action?url=@u&title=@t",facebook:"https://www.facebook.com/sharer/sharer.php?u=@u&title=@t&description=@d&quote=@q&hashtag=@h",flipboard:"https://share.flipboard.com/bookmarklet/popout?v=2&url=@u&title=@t",hackernews:"https://news.ycombinator.com/submitlink?u=@u&t=@t",instapaper:"http://www.instapaper.com/edit?url=@u&title=@t&description=@d",line:"http://line.me/R/msg/text/?@t%0D%0A@u%0D%0A@d",linkedin:"https://www.linkedin.com/shareArticle?url=@u",odnoklassniki:"https://connect.ok.ru/dk?st.cmd=WidgetSharePreview&st.shareUrl=@u&st.comments=@t",pinterest:"https://pinterest.com/pin/create/button/?url=@u&media=@m&description=@t",pocket:"https://getpocket.com/save?url=@u&title=@t",quora:"https://www.quora.com/share?url=@u&title=@t",reddit:"https://www.reddit.com/submit?url=@u&title=@t",skype:"https://web.skype.com/share?url=@t%0D%0A@u%0D%0A@d",sms:"sms:?body=@t%0D%0A@u%0D%0A@d",stumbleupon:"https://www.stumbleupon.com/submit?url=@u&title=@t",telegram:"https://t.me/share/url?url=@u&text=@t%0D%0A@d",tumblr:"https://www.tumblr.com/share/link?url=@u&name=@t&description=@d",twitter:"https://twitter.com/intent/tweet?text=@t&url=@u&hashtags=@h@tu",viber:"viber://forward?text=@t%0D%0A@u%0D%0A@d",vk:"https://vk.com/share.php?url=@u&title=@t&description=@d&image=@m&noparse=true",weibo:"http://service.weibo.com/share/share.php?url=@u&title=@t&pic=@m",whatsapp:"https://api.whatsapp.com/send?text=@t%0D%0A@u%0D%0A@d",wordpress:"https://wordpress.com/press-this.php?u=@u&t=@t&s=@d&i=@m",xing:"https://www.xing.com/social/share/spi?op=share&url=@u&title=@t",yammer:"https://www.yammer.com/messages/new?login=true&status=@t%0D%0A@u%0D%0A@d"},o="undefined"!=typeof window?window:null;var n={name:"ShareNetwork",props:{network:{type:String,required:!0},url:{type:String,required:!0},title:{type:String,required:!0},description:{type:String,default:""},quote:{type:String,default:""},hashtags:{type:String,default:""},twitterUser:{type:String,default:""},media:{type:String,default:""},tag:{type:String,default:"a"},popup:{type:Object,default:function(){return{width:626,height:436}}}},data:function(){return{popupTop:0,popupLeft:0,popupWindow:void 0,popupInterval:null}},computed:{networks:function(){return this.$SocialSharing?this.$SocialSharing.options.networks:r},key:function(){return this.network.toLowerCase()},rawLink:function(){var t=navigator.userAgent.toLowerCase();return"sms"===this.key&&(t.indexOf("iphone")>-1||t.indexOf("ipad")>-1)?this.networks[this.key].replace(":?",":&"):this.networks[this.key]},shareLink:function(){var t=this.rawLink;return"twitter"===this.key&&(this.hashtags.length||(t=t.replace("&hashtags=@h","")),this.twitterUser.length||(t=t.replace("@tu",""))),t.replace(/@tu/g,"&via="+encodeURIComponent(this.twitterUser)).replace(/@u/g,encodeURIComponent(this.url)).replace(/@t/g,encodeURIComponent(this.title)).replace(/@d/g,encodeURIComponent(this.description)).replace(/@q/g,encodeURIComponent(this.quote)).replace(/@h/g,this.encodedHashtags).replace(/@m/g,encodeURIComponent(this.media))},encodedHashtags:function(){return"facebook"===this.key&&this.hashtags.length?"%23"+this.hashtags.split(",")[0]:this.hashtags}},render:function(t){var e=this;if(!this.networks.hasOwnProperty(this.key))throw new Error("Network "+this.key+" does not exist");var i={class:"share-network-"+this.key,on:{click:function(){return e["http"===e.rawLink.substring(0,4)?"share":"touch"]()}}};return"a"===this.tag&&(i.attrs={href:"javascript:void(0)"}),t(this.tag,i,this.$slots.default)},methods:{resizePopup:function(){var t=o.innerWidth||document.documentElement.clientWidth||o.screenX,e=o.innerHeight||document.documentElement.clientHeight||o.screenY,i=t/o.screen.availWidth;this.popupLeft=(t-this.popup.width)/2/i+(void 0!==o.screenLeft?o.screenLeft:o.screenX),this.popupTop=(e-this.popup.height)/2/i+(void 0!==o.screenTop?o.screenTop:o.screenY)},share:function(){var t=this;this.resizePopup(),this.popupWindow&&this.popupInterval&&(clearInterval(this.popupInterval),this.popupWindow.close(),this.emit("change")),this.popupWindow=o.open(this.shareLink,"sharer-"+this.key,",height="+this.popup.height+",width="+this.popup.width+",left="+this.popupLeft+",top="+this.popupTop+",screenX="+this.popupLeft+",screenY="+this.popupTop),this.popupWindow&&(this.popupWindow.focus(),this.popupInterval=setInterval((function(){t.popupWindow&&!t.popupWindow.closed||(clearInterval(t.popupInterval),t.popupWindow=null,t.emit("close"))}),500),this.emit("open"))},touch:function(){window.open(this.shareLink,"_blank"),this.emit("open")},emit:function(t){this.$root.$emit("share_network_"+t,this.key,this.url),this.$emit(t,this.key,this.url)}}};e.default={install:function(t,e){t.component(n.name,n),t.prototype.$SocialSharing={options:{networks:e&&e.hasOwnProperty("networks")?Object.assign(r,e.networks):r}}}}}])}));
+
+/***/ }),
+
 /***/ "c04e":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -75581,15 +75588,12 @@ module.exports = function (key) {
 
 /***/ }),
 
-/***/ "fae3":
+/***/ "fb15":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 // ESM COMPAT FLAG
 __webpack_require__.r(__webpack_exports__);
-
-// EXPORTS
-__webpack_require__.d(__webpack_exports__, "PdfViewer", function() { return /* reexport */ PdfViewer; });
 
 // CONCATENATED MODULE: ./node_modules/@vue/cli-service/lib/commands/build/setPublicPath.js
 // This file is imported into lib/wc client bundles.
@@ -84403,12 +84407,12 @@ var index_es_iconsCache = {
 
 
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"dc4d231c-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/PdfViewer.vue?vue&type=template&id=3ca380e1&
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{ref:"containerRef",staticClass:"pdf-viewer-container",on:{"mouseleave":_vm.onContainerMouseLeave,"mouseenter":_vm.onContainerMouseEnter,"click":_vm.onContainerClick}},[(_vm.pdfData)?_c('div',{ref:"containerWrapperRef",staticClass:"pdf-viewer-container-wrapper",style:(_vm.containerWrapperStyle),on:{"mousedown":_vm.onContainerWrapperMouseDown,"mouseup":_vm.onContainerWrapperMouseUp,"mousemove":_vm.onContainerWrapperMouseMove,"mouseleave":_vm.onContainerWrapperMouseLeave}},_vm._l((_vm.pages),function(item){return _c('pdf',{key:item.page,style:(_vm.pdfStyle),attrs:{"src":_vm.pdfData,"page":item.page,"scale":_vm.computedScale,"text":false}},[_c('template',{slot:"loading"},[_vm._v(" loading... ")])],2)}),1):_vm._e(),_c('transition',{attrs:{"name":"pdf-transition-fade"}},[(_vm.showNext)?_c('arrow-button',{staticClass:"pdf-viewer-arrow-right",on:{"click":_vm.nextPage}}):_vm._e()],1),_c('transition',{attrs:{"name":"pdf-transition-fade"}},[(_vm.showPrevious)?_c('arrow-button',{staticClass:"pdf-viewer-arrow-left",attrs:{"right":false},on:{"click":_vm.previousPage}}):_vm._e()],1),_c('transition',{attrs:{"name":"pdf-transition-fade"}},[(_vm.showUi)?_c('div',{staticClass:"pdf-viewer-control-panel-container"},[_c('page-input',{attrs:{"total":_vm.totalPages},model:{value:(_vm.pageInputModel),callback:function ($$v) {_vm.pageInputModel=$$v},expression:"pageInputModel"}}),_c('span',{attrs:{"title":"Zoom In"}},[_c('icon-button',{attrs:{"icon":['fas', 'plus']},on:{"click":_vm.zoomIn}})],1),_c('span',{attrs:{"title":"Zoom Out"}},[_c('icon-button',{attrs:{"icon":['fas', 'minus']},on:{"click":_vm.zoomOut}})],1),_c('span',{attrs:{"title":"Fullscreen"}},[_c('icon-button',{attrs:{"icon":['fas', this.fullscreen ? 'compress' : 'expand']},on:{"click":_vm.toggleFullscreen}})],1),_c('span',{attrs:{"title":"Share"}},[_c('icon-button',{attrs:{"icon":['fas', 'share']},on:{"click":_vm.showSharePopup}})],1)],1):_vm._e()]),_c('share-popup',{attrs:{"share-link":_vm.shareLink},on:{"share-button-click":function($event){return _vm.$emit('share-button-click', $event)}},model:{value:(_vm.sharePopup),callback:function ($$v) {_vm.sharePopup=$$v},expression:"sharePopup"}})],1)}
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"af7077bc-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/PdfViewer.vue?vue&type=template&id=3ddfa77e&
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{ref:"containerRef",staticClass:"pdf-viewer-container",on:{"mouseleave":_vm.onContainerMouseLeave,"mouseenter":_vm.onContainerMouseEnter,"click":_vm.onContainerClick}},[(_vm.pdfData)?_c('div',{ref:"containerWrapperRef",staticClass:"pdf-viewer-container-wrapper",style:(_vm.containerWrapperStyle),on:{"mousedown":_vm.onContainerWrapperMouseDown,"mouseup":_vm.onContainerWrapperMouseUp,"mousemove":_vm.onContainerWrapperMouseMove,"mouseleave":_vm.onContainerWrapperMouseLeave}},_vm._l((_vm.pages),function(item){return _c('pdf',{key:item.page,style:(_vm.pdfStyle),attrs:{"src":_vm.pdfData,"page":item.page,"scale":_vm.computedScale,"text":false}},[_c('template',{slot:"loading"},[_vm._v(" loading... ")])],2)}),1):_vm._e(),_c('transition',{attrs:{"name":"pdf-transition-fade"}},[(_vm.showNext)?_c('arrow-button',{staticClass:"pdf-viewer-arrow-right",on:{"click":_vm.nextPage}}):_vm._e()],1),_c('transition',{attrs:{"name":"pdf-transition-fade"}},[(_vm.showPrevious)?_c('arrow-button',{staticClass:"pdf-viewer-arrow-left",attrs:{"right":false},on:{"click":_vm.previousPage}}):_vm._e()],1),_c('transition',{attrs:{"name":"pdf-transition-fade"}},[(_vm.showUi)?_c('div',{staticClass:"pdf-viewer-control-panel-container"},[_c('page-input',{attrs:{"total":_vm.totalPages},model:{value:(_vm.pageInputModel),callback:function ($$v) {_vm.pageInputModel=$$v},expression:"pageInputModel"}}),_c('span',{attrs:{"title":"Zoom In"}},[_c('icon-button',{attrs:{"icon":['fas', 'plus']},on:{"click":_vm.zoomIn}})],1),_c('span',{attrs:{"title":"Zoom Out"}},[_c('icon-button',{attrs:{"icon":['fas', 'minus']},on:{"click":_vm.zoomOut}})],1),_c('span',{attrs:{"title":"Fullscreen"}},[_c('icon-button',{attrs:{"icon":['fas', this.fullscreen ? 'compress' : 'expand']},on:{"click":_vm.toggleFullscreen}})],1),_c('span',{attrs:{"title":"Share"}},[_c('icon-button',{attrs:{"icon":['fas', 'share']},on:{"click":_vm.showSharePopup}})],1)],1):_vm._e()]),_c('share-popup',{attrs:{"url":_vm.shareUrl,"title":_vm.shareTitle,"description":_vm.shareDescription},model:{value:(_vm.sharePopup),callback:function ($$v) {_vm.sharePopup=$$v},expression:"sharePopup"}})],1)}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/PdfViewer.vue?vue&type=template&id=3ca380e1&
+// CONCATENATED MODULE: ./src/components/PdfViewer.vue?vue&type=template&id=3ddfa77e&
 
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es.promise.js
 var es_promise = __webpack_require__("e6cf");
@@ -84465,7 +84469,7 @@ var es_array_concat = __webpack_require__("99af");
 var pdfvuer_umd = __webpack_require__("7b77");
 var pdfvuer_umd_default = /*#__PURE__*/__webpack_require__.n(pdfvuer_umd);
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"dc4d231c-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/ui/ArrowButton.vue?vue&type=template&id=296c4ea3&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"af7077bc-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/ui/ArrowButton.vue?vue&type=template&id=296c4ea3&
 var ArrowButtonvue_type_template_id_296c4ea3_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('button',_vm._g({staticClass:"pdf-ui-button pdf-ui-arrow-button"},_vm.$listeners),[_c('font-awesome-icon',{attrs:{"icon":['fas', _vm.right ? 'chevron-right' : 'chevron-left']}})],1)}
 var ArrowButtonvue_type_template_id_296c4ea3_staticRenderFns = []
 
@@ -84616,7 +84620,7 @@ var component = normalizeComponent(
 )
 
 /* harmony default export */ var ArrowButton = (component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"dc4d231c-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/ui/IconButton.vue?vue&type=template&id=3f092722&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"af7077bc-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/ui/IconButton.vue?vue&type=template&id=3f092722&
 var IconButtonvue_type_template_id_3f092722_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('button',_vm._g({staticClass:"pdf-ui-button pdf-ui-icon-button"},_vm.$listeners),[_c('font-awesome-icon',{attrs:{"icon":_vm.icon}})],1)}
 var IconButtonvue_type_template_id_3f092722_staticRenderFns = []
 
@@ -84661,14 +84665,17 @@ var IconButton_component = normalizeComponent(
 )
 
 /* harmony default export */ var IconButton = (IconButton_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"dc4d231c-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/ui/SharePopup.vue?vue&type=template&id=b9df90e2&
-var SharePopupvue_type_template_id_b9df90e2_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('transition',{attrs:{"name":"pdf-transition-fade"}},[(_vm.value)?_c('div',{staticClass:"pdf-viewer-share-popup",on:{"click":function($event){if($event.target !== $event.currentTarget){ return null; }return _vm.onContainerClick($event)}}},[_c('div',{staticClass:"pdf-viewer-share-popup-content"},[_c('div',{staticClass:"pdf-viewer-share-popup-icons-container"},_vm._l((_vm.shareButtons),function(item){return _c('div',{key:item.name,class:("pdf-ui-share-button pdf-ui-share-button-" + (item.name)),on:{"click":function($event){return _vm.$emit('share-button-click', { name: item.name })}}},[_c('font-awesome-icon',{attrs:{"icon":item.icon}})],1)}),0),_c('div',{staticClass:"pdf-ui-share-link"},[_c('input',{ref:"linkInputRef",attrs:{"readonly":""},domProps:{"value":_vm.shareLink}}),_c('div',{staticClass:"pdf-ui-share-link-copy-button",on:{"click":_vm.onCopyClick}},[_vm._v(" "+_vm._s(this.copied ? "COPIED" : "COPY")+" ")])])])]):_vm._e()])}
-var SharePopupvue_type_template_id_b9df90e2_staticRenderFns = []
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"af7077bc-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/ui/SharePopup.vue?vue&type=template&id=6951d1fe&
+var SharePopupvue_type_template_id_6951d1fe_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('transition',{attrs:{"name":"pdf-transition-fade"}},[(_vm.value)?_c('div',{staticClass:"pdf-viewer-share-popup",on:{"click":function($event){if($event.target !== $event.currentTarget){ return null; }return _vm.onContainerClick($event)}}},[_c('div',{staticClass:"pdf-viewer-share-popup-content"},[_c('div',{staticClass:"pdf-viewer-share-popup-icons-container"},_vm._l((_vm.shareButtons),function(item){return _c('share-network',{key:item.name,class:("pdf-ui-share-button pdf-ui-share-button-" + (item.name)),attrs:{"network":item.name,"url":_vm.url,"title":_vm.title,"description":_vm.description}},[_c('font-awesome-icon',{attrs:{"icon":item.icon}})],1)}),1),_c('div',{staticClass:"pdf-ui-share-link"},[_c('input',{ref:"linkInputRef",attrs:{"readonly":""},domProps:{"value":_vm.url}}),_c('div',{staticClass:"pdf-ui-share-link-copy-button",on:{"click":_vm.onCopyClick}},[_vm._v(" "+_vm._s(this.copied ? "COPIED" : "COPY")+" ")])])])]):_vm._e()])}
+var SharePopupvue_type_template_id_6951d1fe_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/ui/SharePopup.vue?vue&type=template&id=b9df90e2&
+// CONCATENATED MODULE: ./src/components/ui/SharePopup.vue?vue&type=template&id=6951d1fe&
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/ui/SharePopup.vue?vue&type=script&lang=js&
+//
+//
+//
 //
 //
 //
@@ -84712,16 +84719,15 @@ var shareButtonsMap = [{
   name: "twitter",
   icon: ["fab", "twitter"]
 }, {
-  name: "mail",
+  name: "email",
   icon: ["fas", "envelope"]
 }];
 /* harmony default export */ var SharePopupvue_type_script_lang_js_ = ({
   props: {
     value: Boolean,
-    shareLink: {
-      type: String,
-      default: ""
-    }
+    url: String,
+    title: String,
+    description: String
   },
   data: function data() {
     return {
@@ -84772,8 +84778,8 @@ var shareButtonsMap = [{
 
 var SharePopup_component = normalizeComponent(
   ui_SharePopupvue_type_script_lang_js_,
-  SharePopupvue_type_template_id_b9df90e2_render,
-  SharePopupvue_type_template_id_b9df90e2_staticRenderFns,
+  SharePopupvue_type_template_id_6951d1fe_render,
+  SharePopupvue_type_template_id_6951d1fe_staticRenderFns,
   false,
   null,
   null,
@@ -84782,7 +84788,7 @@ var SharePopup_component = normalizeComponent(
 )
 
 /* harmony default export */ var SharePopup = (SharePopup_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"dc4d231c-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/ui/PageInput.vue?vue&type=template&id=6d2bd59f&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"af7077bc-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/ui/PageInput.vue?vue&type=template&id=6d2bd59f&
 var PageInputvue_type_template_id_6d2bd59f_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"pdf-ui-page-input"},[_c('input',{directives:[{name:"model",rawName:"v-model",value:(_vm.model),expression:"model"}],attrs:{"type":"number"},domProps:{"value":(_vm.model)},on:{"focus":_vm.onFocus,"focusout":_vm.onFocusout,"input":function($event){if($event.target.composing){ return; }_vm.model=$event.target.value}}}),_c('span',{staticStyle:{"margin-bottom":"5px"}},[_vm._v("of "+_vm._s(_vm.total))])])}
 var PageInputvue_type_template_id_6d2bd59f_staticRenderFns = []
 
@@ -84939,6 +84945,7 @@ var PageInput_component = normalizeComponent(
 //
 //
 //
+//
 
 
 
@@ -84953,7 +84960,15 @@ var MAX_SCALE = 5;
       type: String,
       required: true
     },
-    shareLink: {
+    shareUrl: {
+      type: String,
+      default: ""
+    },
+    shareTitle: {
+      type: String,
+      default: ""
+    },
+    shareDescription: {
       type: String,
       default: ""
     }
@@ -85302,16 +85317,35 @@ var PdfViewer_component = normalizeComponent(
 )
 
 /* harmony default export */ var PdfViewer = (PdfViewer_component.exports);
+// EXTERNAL MODULE: ./node_modules/vue-social-sharing/dist/vue-social-sharing.js
+var vue_social_sharing = __webpack_require__("bd8c");
+var vue_social_sharing_default = /*#__PURE__*/__webpack_require__.n(vue_social_sharing);
+
+// CONCATENATED MODULE: ./src/plugin.js
+
+
+
+
+
+/* harmony default export */ var src_plugin = ({
+  install: function install(Vue) {
+    var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {
+      componentName: 'PdfViewer',
+      sharingOptions: undefined
+    };
+    index_es["c" /* library */].add(faChevronRight, faChevronLeft, faPlus, faMinus, faExpand, faCompress, faShare, faFacebookF, faLinkedinIn, faPinterestP, faTwitter, faEnvelope);
+    Vue.use(vue_social_sharing_default.a, options.sharingOptions);
+    Vue.component(options.componentName, PdfViewer);
+  }
+});
 // CONCATENATED MODULE: ./src/main.js
 
 
+/* harmony default export */ var main = (src_plugin);
+// CONCATENATED MODULE: ./node_modules/@vue/cli-service/lib/commands/build/entry-lib.js
 
 
-index_es["c" /* library */].add(faChevronRight, faChevronLeft, faPlus, faMinus, faExpand, faCompress, faShare, faFacebookF, faLinkedinIn, faPinterestP, faTwitter, faEnvelope);
-
-
-// CONCATENATED MODULE: ./node_modules/@vue/cli-service/lib/commands/build/entry-lib-no-default.js
-
+/* harmony default export */ var entry_lib = __webpack_exports__["default"] = (main);
 
 
 

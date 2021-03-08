@@ -65,8 +65,9 @@
     </transition>
     <share-popup
       v-model="sharePopup"
-      :share-link="shareLink"
-      @share-button-click="$emit('share-button-click', $event)"
+      :url="shareUrl"
+      :title="shareTitle"
+      :description="shareDescription"
     />
   </div>
 </template>
@@ -88,7 +89,15 @@ export default {
       type: String,
       required: true,
     },
-    shareLink: {
+    shareUrl: {
+      type: String,
+      default: "",
+    },
+    shareTitle: {
+      type: String,
+      default: "",
+    },
+    shareDescription: {
       type: String,
       default: "",
     },

@@ -7,17 +7,20 @@
     >
       <div class="pdf-viewer-share-popup-content">
         <div class="pdf-viewer-share-popup-icons-container">
-          <div
+          <share-network
             v-for="item in shareButtons"
             :key="item.name"
             :class="`pdf-ui-share-button pdf-ui-share-button-${item.name}`"
-            @click="$emit('share-button-click', { name: item.name })"
+            :network="item.name"
+            :url="url"
+            :title="title"
+            :description="description"
           >
             <font-awesome-icon :icon="item.icon" />
-          </div>
+          </share-network>
         </div>
         <div class="pdf-ui-share-link">
-          <input ref="linkInputRef" :value="shareLink" readonly />
+          <input ref="linkInputRef" :value="url" readonly />
           <div class="pdf-ui-share-link-copy-button" @click="onCopyClick">
             {{ this.copied ? "COPIED" : "COPY" }}
           </div>
@@ -48,7 +51,7 @@ const shareButtonsMap = [
     icon: ["fab", "twitter"],
   },
   {
-    name: "mail",
+    name: "email",
     icon: ["fas", "envelope"],
   },
 ];
@@ -56,10 +59,9 @@ const shareButtonsMap = [
 export default {
   props: {
     value: Boolean,
-    shareLink: {
-      type: String,
-      default: "",
-    },
+    url: String,
+    title: String,
+    description: String,
   },
   data() {
     return {
