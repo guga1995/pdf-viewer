@@ -62,6 +62,14 @@
                 margin-bottom: 20px;
             }
         }
+        &-pdf {
+            overflow: hidden;
+            #viewerContainer {
+                margin-left: 1%;
+                margin-bottom: -1%;
+                overflow: hidden;
+            }
+        }
     }
     &-ui {
         &-button {
@@ -174,7 +182,8 @@
             &-leave-active {
                 transition: opacity 0.3s;
             }
-            &-enter, &-leave-to {
+            &-enter,
+            &-leave-to {
                 opacity: 0 !important;
             }
         }

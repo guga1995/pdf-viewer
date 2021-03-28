@@ -17,6 +17,7 @@
       @mouseleave="onContainerWrapperMouseLeave"
     >
       <pdf
+        class="pdf-viewer-pdf"
         v-for="item in pages"
         :key="item.page"
         :src="pdfData"
