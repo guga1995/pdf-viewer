@@ -9,10 +9,17 @@
       class="pdf-viewer-container-wrapper"
       v-if="pdfData"
       ref="containerWrapperRef"
+
       @mousedown="onContainerWrapperMouseDown"
       @mouseup="onContainerWrapperMouseUp"
       @mousemove="onContainerWrapperMouseMove"
       @mouseleave="onContainerWrapperMouseLeave"
+
+      @touchstart="onContainerWrapperMouseDown"
+      @touchend="onContainerWrapperMouseUp"
+      @touchmove="onContainerWrapperMouseMove"
+      @touchcancel="onContainerWrapperMouseLeave"
+
       @click="onContainerClick"
     >
       <pdf
