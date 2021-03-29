@@ -4,17 +4,16 @@
     ref="containerRef"
     @mouseleave="onContainerMouseLeave"
     @mouseenter="onContainerMouseEnter"
-    @click="onContainerClick"
   >
     <div
       class="pdf-viewer-container-wrapper"
       v-if="pdfData"
       ref="containerWrapperRef"
-      :style="containerWrapperStyle"
       @mousedown="onContainerWrapperMouseDown"
       @mouseup="onContainerWrapperMouseUp"
       @mousemove="onContainerWrapperMouseMove"
       @mouseleave="onContainerWrapperMouseLeave"
+      @click="onContainerClick"
     >
       <pdf
         class="pdf-viewer-pdf"
@@ -154,14 +153,6 @@ export default {
     pdfStyle() {
       return `
         transform: translate(${this.pdfTransformTranslate.x}px, ${this.pdfTransformTranslate.y}px)
-      `;
-    },
-    containerWrapperStyle() {
-      return `
-        top: ${50}px;
-        bottom: ${50}px;
-        left: ${5}px;
-        right: ${5}px;
       `;
     },
     pages() {
